@@ -1,14 +1,15 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import './App.css';
+// import reactLogo from './assets/react.svg';
+// import './App.css';
 import './testSass.sass';
+import Header from './Components/Header/Header';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-      <div>
+      {/* <div>
         <a href="https://react.dev" target="_blank" rel="noreferrer">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
@@ -33,7 +34,8 @@ function App() {
       </p>
       <p className="sass-class">
         Hello
-      </p>
+      </p> */}
+      <Header />
     </>
   );
 }
