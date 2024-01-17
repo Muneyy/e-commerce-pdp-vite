@@ -1,0 +1,30 @@
+.productImagesContainer {
+  display: flex;
+  width: 40%;
+}
+.smallImagesContainer {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.smallImages {
+  max-width: 105px;
+  border-radius: 15px;
+  transition: 300ms ease-in;
+
+  &:hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+  &.selected {
+    border: 2px solid var(--orange);
+    opacity: 0.5;
+  }
+}
+.largeImage {
+  max-width: 480px;
+  border-radius: 15px;
+  cursor: pointer;
+}

@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 import Header from './Components/Header/Header';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
+import ProductImages from './Components/ProductImages/ProductImages';
+import '@/assets/styles/globals.scss';
 
 function App() {
   const [productsArray, setProductsArray] = useState([]);
@@ -19,33 +21,8 @@ function App() {
   }, []);
 
   return (
-    <>
-      {/* <div>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React For Ecommerce-PDP</h1>
-      <div className="card">
-        <button type="submit" onClick={() => setCount((count) => count + 1)}>
-          count is
-          {' '}
-          {count}
-        </button>
-        <p>
-          Edit
-          {' '}
-          <code>src/App.tsx</code>
-          {' '}
-          and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-      <p className="sass-class">
-        Hello
-      </p> */}
+    <div className="wrapper">
+      <ProductImages />
       <Header />
       {isLoaded ? (
         productsArray.map((product) => {
@@ -66,8 +43,8 @@ function App() {
       ) : (
         <p>Loading...</p>
       )}
+    </div>
 
-    </>
   );
 }
 
