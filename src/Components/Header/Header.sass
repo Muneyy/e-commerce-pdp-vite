@@ -1,6 +1,6 @@
 .header
     display: flex
-    align-items: center
+    align-items: stretch
     justify-content: space-between
     background-color: #fff
     margin: 0 50px
@@ -10,6 +10,8 @@
     border-bottom: 1px gray solid
 
 .header .container-logo
+    display: flex
+    align-items: center
     flex-grow: 1
 
 .header .container-navlinks-cart
@@ -17,14 +19,10 @@
     flex-direction: row
     justify-content: space-between
     flex-grow: 9
-    height: 100%
-
-.header nav
-    height: 100%
 
 .header ul
     display: flex
-    align-items: center
+    align-items: stretch
     justify-content: space-between
     list-style-type: none
     height: 100%
@@ -33,7 +31,6 @@
     font: hsl(219, 9%, 45%)
 
     li 
-        height: 100%
         display: flex
         align-items: center
         background-color: transparent
@@ -74,7 +71,7 @@
     font: black
     gap: 30px
     justify-content: space-between
-    // background-color: red
+    position: relative
 
     button
         background-color: transparent
