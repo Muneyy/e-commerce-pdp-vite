@@ -1,10 +1,10 @@
-import ProductCarousel from './Components/ProductCarousel/ProductCarousel';
+import Sidebar from './Components/Sidebar/Sidebar';
 import '@/assets/styles/globals.scss';
 
 function App() {
   return (
     <div className="wrapper">
-      <ProductCarousel />
+      <Sidebar />
     </div>
   );
 }
