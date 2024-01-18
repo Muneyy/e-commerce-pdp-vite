@@ -1,6 +1,7 @@
 // import reactLogo from './assets/react.svg';
 // import './App.css';
 import Header from './Components/Header/Header';
+import ProductDetails from './Components/ProductDetails/ProductDetails';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         Hello
       </p> */}
       <Header />
+      <ProductDetails />
     </>
   );
 }
