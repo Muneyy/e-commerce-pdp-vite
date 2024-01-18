@@ -10,6 +10,7 @@ import { useState } from 'react';
 // import reactLogo from './assets/react.svg';
 // import './App.css';
 import Header from './Components/Header/Header';
+import ProductDetails from './Components/ProductDetails/ProductDetails';
 
 function App() {
   const [productsArray, setProductsArray] = useState([]);
