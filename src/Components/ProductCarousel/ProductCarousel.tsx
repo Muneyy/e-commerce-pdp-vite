@@ -8,6 +8,8 @@ import LargeImage4 from '@/assets/images/image-product-4.jpg';
 
 const carouselImages = [LargeImage1, LargeImage2, LargeImage3, LargeImage4];
 
+const carouselImages = [LargeImage1, LargeImage2, LargeImage3, LargeImage4];
+
 export default function ProductCarousel() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -20,7 +22,7 @@ export default function ProductCarousel() {
 
   const renderNavigationButton = (label:string, increment:number) => (
     <button
-      className={`${label}`}
+      className={`${label.toLowerCase()}Icon`}
       onClick={() => handleIndexChange(increment)}
       type="button"
       aria-label={label}
@@ -39,9 +41,9 @@ export default function ProductCarousel() {
 
   const renderCarousel = (
     <div className="carouselContainer">
-      {renderNavigationButton('prevIconCarousel', -1)}
+      {renderNavigationButton('Prev', -1)}
       <img src={carouselImages[selectedIndex]} alt="Large Img" className="carouselImages" />
-      {renderNavigationButton('nextIconCarousel', 1)}
+      {renderNavigationButton('Next', 1)}
     </div>
   );
 
