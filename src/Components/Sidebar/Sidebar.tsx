@@ -4,8 +4,8 @@ import useMediaQuery from '../../Hooks/useMedia';
 
 export default function Sidebar() {
   const isMobile = useMediaQuery(375);
-  const [showSideMenu, setShowSideMenu] = useState(true);
-  const sidebarItem = ['Collections', 'Men', 'Women', 'About', 'Contact'];
+  const [showSideMenu, setShowSideMenu] = useState<boolean>(true);
+  const sidebarItem : string[] = ['Collections', 'Men', 'Women', 'About', 'Contact'];
   const renderSideMenu = (
     <div
       className={`sideMenuWrapper ${isMobile && showSideMenu ? 'menuOpen' : ''}`}
