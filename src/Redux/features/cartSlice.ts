@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type ProductType = {
-  id: number,
   company: string,
   title: string,
   description: string,
@@ -10,11 +9,11 @@ type ProductType = {
   quantity: number
 };
 
-interface ProductsState {
+interface CartState {
   value: ProductType[];
 }
 
-const initialState: ProductsState = {
+const initialState: CartState = {
   value: [],
 };
 
@@ -29,3 +28,7 @@ export const cartSlice = createSlice({
 });
 
 export const { addToCart } = cartSlice.actions;
+
+// export const selectCart = (state: RootState) => state.cart.value;
+
+export default cartSlice.reducer;

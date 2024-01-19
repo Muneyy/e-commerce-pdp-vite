@@ -1,6 +1,8 @@
 /* eslint-disable react/function-component-definition */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './ProductDetails.sass';
+import { useAppDispatch, useAppSelector } from '../../Redux/app/hooks';
+import { addToCart } from '../../Redux/features/cartSlice';
 
 interface ProductDetailsProps {
   company: string;
@@ -18,17 +20,39 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
   discount,
 }) => {
   const [quantity, setQuantity] = useState(0);
+  const dispatch = useAppDispatch();
 
   function handleQuantityIncrease() {
     setQuantity((prevQuantity) => prevQuantity + 1);
   }
-
   function handleQuantityDecrease() {
     setQuantity((prevQuantity) => (prevQuantity > 0 ? prevQuantity - 1 : 0));
   }
 
-  const discountedPrice = price * discount;
+  function handleAddToCart() {
+    dispatch(addToCart({
+      company,
+      title,
+      description,
+      price,
+      discount,
+      quantity,
+    }));
+  }
 
+  function useGetCart() {
+    const cart = useAppSelector((state) => state.cart.value);
+    console.log(cart);
+  }
+
+  useGetCart();
+
+  // useEffect(() => {
+  //   const currentCart = useGetCart();
+  //   console.log(currentCart);
+  // }, [quantity]);
+
+  const discountedPrice = price * discount;
   function showTwoDecimalPlaces(num: number) {
     return (Math.round(num * 100) / 100).toFixed(2);
   }
@@ -82,6 +106,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
         </div>
         <div className="details-add-to-cart">
           <button
+            onClick={handleAddToCart}
             type="button"
             className="add-to-cart-button"
             aria-label="add to cart"
