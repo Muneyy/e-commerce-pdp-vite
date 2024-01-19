@@ -1,9 +1,19 @@
 // import reactLogo from './assets/react.svg';
 // import './App.css';
+import { useEffect } from 'react';
 import Header from './Components/Header/Header';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
+import createMirageAPI from './MirageJS/mirageServer';
 
 function App() {
+  useEffect(() => {
+    createMirageAPI();
+    fetch('/api/products')
+      .then((res) => res.json())
+      .then((json) => console.log(json));
+    // Fix this to instead store the data in Redux global state
+  }, []);
+
   return (
     <>
       {/* <div>
