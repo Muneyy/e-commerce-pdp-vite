@@ -1,0 +1,46 @@
+@keyframes fadeIn
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+.cart-button
+    position: relative
+
+.cart-count
+    position: absolute
+    background-color: hsl(26, 100%, 55%)
+    font-size: 0.7rem
+    font-weight: 750
+    border-radius: 9px
+    padding: 0 8px
+    top: -40%
+    left: 30%
+    
+.cart-card 
+    min-height: 250px
+    width: 350px
+    color: black
+    position: absolute
+    background: white
+    top: 100px
+    right: -75%
+    border-radius: 20px
+    padding-bottom: 30px
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px
+    animation: fadeIn 0.1s ease-in-out
+
+.cart-header 
+    // wrong color, use globals for gray
+    border-bottom: 1px #dcdcdc solid
+    padding: 8px 20px
+    h2
+        font-size: 1.2rem
+
+.cart-body
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    font-weight: 700
+    color: hsl(219, 9%, 45%)
