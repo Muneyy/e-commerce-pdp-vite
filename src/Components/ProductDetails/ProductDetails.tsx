@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { productDetails } from '../../assets/dummyAPI';
 import './ProductDetails.sass';
 
@@ -8,6 +8,13 @@ export default function ProductDetails() {
   const {
     company, title, description, price, discount,
   } = productDetails;
+
+  useEffect(() => {
+    fetch('/api/products')
+      .then((res) => res.json())
+      .then((json) => console.log(json));
+    // Fix this to instead store the data in Redux global state
+  }, []);
 
   const discountedPrice = price * discount;
 

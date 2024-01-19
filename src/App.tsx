@@ -3,11 +3,9 @@
 import { useEffect } from 'react';
 import Header from './Components/Header/Header';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
-import createMirageAPI from './MirageJS/mirageServer';
 
 function App() {
   useEffect(() => {
-    createMirageAPI();
     fetch('/api/products')
       .then((res) => res.json())
       .then((json) => console.log(json));
