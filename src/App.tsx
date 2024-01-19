@@ -1,5 +1,3 @@
-// import reactLogo from './assets/react.svg';
-// import './App.css';
 import { useEffect, useState } from 'react';
 import Header from './Components/Header/Header';
 import ProductDetails from './Components/ProductDetails/ProductDetails';

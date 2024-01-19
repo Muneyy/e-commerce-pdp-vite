@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import './Header.sass';
 import avatarImage from './image-avatar.png';
 import Cart from './Subcomponents/Cart';
