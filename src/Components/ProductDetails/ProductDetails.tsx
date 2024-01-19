@@ -1,7 +1,8 @@
 /* eslint-disable react/function-component-definition */
 import React, { useState } from 'react';
 import './ProductDetails.sass';
-import { useAppDispatch, useAppSelector } from '../../Redux/app/hooks';
+import { v4 as uuidv4 } from 'uuid';
+import { useAppDispatch } from '../../Redux/app/hooks';
 import { addToCart } from '../../Redux/features/cartSlice';
 import showTwoDecimalPlaces from '../../HelperFunctions/showTwoDecimalPlaces';
 
@@ -35,6 +36,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
       return;
     }
     dispatch(addToCart({
+      id: uuidv4(),
       company,
       title,
       description,

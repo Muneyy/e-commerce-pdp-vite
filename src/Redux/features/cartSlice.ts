@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type ProductType = {
+  id: string,
   company: string,
   title: string,
   description: string,
@@ -24,10 +25,13 @@ export const cartSlice = createSlice({
     addToCart: (state, action: PayloadAction<ProductType>) => {
       state.value.push(action.payload);
     },
+    deleteCartItem: (state, action: PayloadAction<string>) => {
+      state.value = state.value.filter((item) => item.id !== action.payload);
+    },
   },
 });
 
-export const { addToCart } = cartSlice.actions;
+export const { addToCart, deleteCartItem } = cartSlice.actions;
 
 // export const selectCart = (state: RootState) => state.cart.value;
 
