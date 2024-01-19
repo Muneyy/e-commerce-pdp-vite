@@ -20,7 +20,7 @@ export default function ProductCarousel() {
 
   const renderNavigationButton = (label:string, increment:number) => (
     <button
-      className={`${label.toLowerCase()}Icon`}
+      className={`${label}`}
       onClick={() => handleIndexChange(increment)}
       type="button"
       aria-label={label}
@@ -39,9 +39,9 @@ export default function ProductCarousel() {
 
   const renderCarousel = (
     <div className="carouselContainer">
-      {renderNavigationButton('Prev', -1)}
+      {renderNavigationButton('prevIconCarousel', -1)}
       <img src={carouselImages[selectedIndex]} alt="Large Img" className="carouselImages" />
-      {renderNavigationButton('Next', 1)}
+      {renderNavigationButton('nextIconCarousel', 1)}
     </div>
   );
 

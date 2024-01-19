@@ -4,6 +4,7 @@ import ProductDetails from './Components/ProductDetails/ProductDetails';
 import ProductImages from './Components/ProductImages/ProductImages';
 import ProductCarousel from './Components/ProductCarousel/ProductCarousel';
 import '@/assets/styles/globals.scss';
+import { useMediaQuery } from './Hooks/useMedia';
 
 function App() {
   const [productsArray, setProductsArray] = useState([]);
