@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './ProductDetails.sass';
 import { useAppDispatch, useAppSelector } from '../../Redux/app/hooks';
 import { addToCart } from '../../Redux/features/cartSlice';
+import showTwoDecimalPlaces from '../../HelperFunctions/showTwoDecimalPlaces';
 
 interface ProductDetailsProps {
   company: string;
@@ -30,6 +31,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
   }
 
   function handleAddToCart() {
+    if (quantity === 0) {
+      return;
+    }
     dispatch(addToCart({
       company,
       title,
@@ -40,22 +44,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
     }));
   }
 
-  function useGetCart() {
-    const cart = useAppSelector((state) => state.cart.value);
-    console.log(cart);
-  }
-
-  useGetCart();
-
-  // useEffect(() => {
-  //   const currentCart = useGetCart();
-  //   console.log(currentCart);
-  // }, [quantity]);
-
   const discountedPrice = price * discount;
-  function showTwoDecimalPlaces(num: number) {
-    return (Math.round(num * 100) / 100).toFixed(2);
-  }
 
   return (
     <div className="details-container">
