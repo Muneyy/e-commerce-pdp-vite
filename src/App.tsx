@@ -6,11 +6,6 @@ import ProductDetails from './Components/ProductDetails/ProductDetails';
 import ProductImages from './Components/ProductImages/ProductImages';
 import ProductCarousel from './Components/ProductCarousel/ProductCarousel';
 import '@/assets/styles/globals.scss';
-import { useState } from 'react';
-// import reactLogo from './assets/react.svg';
-// import './App.css';
-import Header from './Components/Header/Header';
-import ProductDetails from './Components/ProductDetails/ProductDetails';
 
 function App() {
   const [productsArray, setProductsArray] = useState([]);
