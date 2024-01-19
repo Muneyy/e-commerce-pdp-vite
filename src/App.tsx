@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Header from './Components/Header/Header';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
 import ProductImages from './Components/ProductImages/ProductImages';
+import ProductCarousel from './Components/ProductCarousel/ProductCarousel';
 import '@/assets/styles/globals.scss';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <div className="wrapper">
+      <ProductCarousel />
       <ProductImages />
       <Header />
       {isLoaded ? (
