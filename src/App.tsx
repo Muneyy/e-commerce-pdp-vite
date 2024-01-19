@@ -1,14 +1,20 @@
 // import reactLogo from './assets/react.svg';
 // import './App.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Header from './Components/Header/Header';
 import ProductDetails from './Components/ProductDetails/ProductDetails';
 
 function App() {
+  const [productsArray, setProductsArray] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
   useEffect(() => {
     fetch('/api/products')
       .then((res) => res.json())
-      .then((json) => console.log(json));
+      .then((json) => {
+        setProductsArray(json.products);
+        setIsLoaded(true);
+      });
     // Fix this to instead store the data in Redux global state
   }, []);
 
@@ -41,7 +47,26 @@ function App() {
         Hello
       </p> */}
       <Header />
-      <ProductDetails />
+      {isLoaded ? (
+        productsArray.map((product) => {
+          const {
+            id, company, title, description, price, discount,
+          } = product;
+          return (
+            <ProductDetails
+              key={id}
+              company={company}
+              title={title}
+              description={description}
+              price={price}
+              discount={discount}
+            />
+          );
+        })
+      ) : (
+        <p>Loading...</p>
+      )}
+
     </>
   );
 }

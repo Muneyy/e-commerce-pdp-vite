@@ -1,20 +1,28 @@
-import { useEffect, useState } from 'react';
+/* eslint-disable react/function-component-definition */
+import React, { useEffect, useState } from 'react';
 import { productDetails } from '../../assets/dummyAPI';
 import './ProductDetails.sass';
 
-export default function ProductDetails() {
+interface ProductDetailsProps {
+  company: string;
+  title: string;
+  description: string;
+  price: number;
+  discount: number;
+}
+
+const ProductDetails: React.FC<ProductDetailsProps> = ({
+  company,
+  title,
+  description,
+  price,
+  discount,
+}) => {
   const [quantity, setQuantity] = useState(0);
 
-  const {
-    company, title, description, price, discount,
-  } = productDetails;
-
-  useEffect(() => {
-    fetch('/api/products')
-      .then((res) => res.json())
-      .then((json) => console.log(json));
-    // Fix this to instead store the data in Redux global state
-  }, []);
+  // const {
+  //   company, title, description, price, discount,
+  // } = productDetails;
 
   const discountedPrice = price * discount;
 
@@ -68,4 +76,6 @@ export default function ProductDetails() {
       </div>
     </div>
   );
-}
+};
+
+export default ProductDetails;
