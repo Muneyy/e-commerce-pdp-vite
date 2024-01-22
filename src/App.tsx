@@ -11,13 +11,13 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const isMobileView = useMediaQuery(375);
   useEffect(() => {
+    // fetch products from mirageJS API
     fetch('/api/products')
       .then((res) => res.json())
       .then((json) => {
         setProductsArray(json.products);
         setIsLoaded(true);
       });
-    // Fix this to instead store the data in Redux global state
   }, []);
 
   return (

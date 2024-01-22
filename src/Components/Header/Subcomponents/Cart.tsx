@@ -42,6 +42,7 @@ export default function Cart() {
                 {/* use map to iterate over multiple cart items */}
                 {currentCart.map((item) => (
                   <CartItem
+                    key={item.id}
                     id={item.id}
                     company={item.company}
                     title={item.title}
