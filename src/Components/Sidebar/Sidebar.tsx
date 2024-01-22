@@ -33,7 +33,7 @@ export default function Sidebar() {
         </button>
         <ul className="sidebarItems">
           {sidebarItem.map((sidebarItems) => (
-            <li key={sidebarItems}>{sidebarItems}</li>
+            <li className="sidebarItem" key={sidebarItems}>{sidebarItems}</li>
           ))}
         </ul>
       </div>
@@ -41,11 +41,11 @@ export default function Sidebar() {
   );
 
   return (
-    <div>
+    <>
       {renderSideMenu}
       <button className="hamburgerButton" type="button" aria-label="Hamburger Btn" onClick={toggleSidebar}>
         <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg"><path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D" fillRule="evenodd" /></svg>
       </button>
-    </div>
+    </>
   );
 }
