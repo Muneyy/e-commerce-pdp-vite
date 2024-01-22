@@ -9,12 +9,22 @@
     height: 150px
     border-bottom: 1px var(--dark-grayish-blue) solid
 
-.header .container-logo
+.header-mobile
+    display: flex
+    justify-content: space-between
+    align-items: center
+    background-color: var(--white)
+    padding: 15px 10px
+    margin: 0
+
+.header 
+  .container-logo
     display: flex
     align-items: center
     flex-grow: 1
 
-.header .container-navlinks-cart
+.header 
+  .container-navlinks-cart
     display: flex
     flex-direction: row
     justify-content: space-between
@@ -47,7 +57,7 @@
         color: var(--dark-grayish-blue)
         
 
-.header .cart-and-avatar
+.header, .cart-and-avatar
     display: flex
     flex-direction: row
     align-items: center
@@ -61,7 +71,7 @@
         border: 0
         padding: 0
 
-.header #avatar
+#avatar
     width: 50px
     height: 50px
     border: 2px solid transparent

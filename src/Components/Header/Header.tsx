@@ -7,7 +7,7 @@ import useMediaQuery from '@/hooks/useMedia';
 export default function Header() {
   const isMobileView = useMediaQuery(375);
   return (
-    <div className="header">
+    <div className={isMobileView ? 'header-mobile' : 'header'}>
       {isMobileView && (<Sidebar />)}
       <div className="container-logo">
         <a aria-label="homepage" href="/">
@@ -15,6 +15,8 @@ export default function Header() {
         </a>
       </div>
       <div className="container-navlinks-cart">
+        {!isMobileView
+        && (
         <nav>
           <ul className="nav-links">
             <li>
@@ -44,6 +46,7 @@ export default function Header() {
             </li>
           </ul>
         </nav>
+        )}
         <div className="cart-and-avatar">
           <Cart />
           <button type="button" aria-label="View avatar">
