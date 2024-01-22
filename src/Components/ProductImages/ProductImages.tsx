@@ -44,7 +44,7 @@ export default function ProductImages() {
   );
 
   const renderDesktopImages = (
-    <div>
+    <>
       <div
         onClick={toggleLightBox}
         onKeyDown={toggleLightBox}
@@ -54,7 +54,7 @@ export default function ProductImages() {
         <img src={LargeImages[selectedIndex]} alt={`Large Img ${selectedIndex + 1}`} className="largeImage" />
       </div>
       {renderSmallImages}
-    </div>
+    </>
   );
 
   const renderLightBox = showLightBox && (
@@ -107,11 +107,9 @@ export default function ProductImages() {
   );
 
   return (
-    <div>
+    <div className="productImagesContainer">
       {renderLightBox}
-      <div className="productImagesContainer">
-        {renderDesktopImages}
-      </div>
+      {renderDesktopImages}
     </div>
   );
 }

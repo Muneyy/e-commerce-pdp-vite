@@ -1,7 +1,16 @@
 .wrapper {
   display: flex;
   max-width: 1200px;
-  margin: 3rem auto;
+  margin: 0 auto;
+
+  @media screen and (max-width: 375px) {
+    margin: 0 auto;
+  }
+}
+
+body {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 * {

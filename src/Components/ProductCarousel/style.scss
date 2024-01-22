@@ -8,8 +8,8 @@
   max-width: 100%;
 }
 
-.nextIcon,
-.prevIcon {
+.nextIconCarousel,
+.prevIconCarousel {
   border: 0;
   background-color: var(--white);
   border-radius: 50%;
@@ -19,11 +19,11 @@
   transform: translateY(-50%);
   cursor: pointer;
 
-  &.nextIcon {
+  &.nextIconCarousel {
     right: 1rem;
   }
 
-  &.prevIcon {
+  &.prevIconCarousel {
     left: 1rem;
   }
 }
