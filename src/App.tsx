@@ -3,7 +3,7 @@ import Header from './Components/Header/Header';
 import ProductDetails from '@/Components/ProductDetails/ProductDetails';
 import ProductImages from '@/Components/ProductImages/ProductImages';
 import ProductCarousel from '@/Components/ProductCarousel/ProductCarousel';
-import "@/assets/styles/globals.scss"
+import '@/assets/styles/globals.scss';
 import useMediaQuery from '@/hooks/useMedia';
 
 function App() {
@@ -11,13 +11,13 @@ function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const isMobileView = useMediaQuery(375);
   useEffect(() => {
+    // fetch products from mirageJS API
     fetch('/api/products')
       .then((res) => res.json())
       .then((json) => {
         setProductsArray(json.products);
         setIsLoaded(true);
       });
-    // Fix this to instead store the data in Redux global state
   }, []);
 
   return (

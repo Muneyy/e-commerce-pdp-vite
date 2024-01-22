@@ -2,12 +2,12 @@
     display: flex
     align-items: stretch
     justify-content: space-between
-    background-color: #fff
+    background-color: var(--white)
     margin: 0 50px
     gap: 20px
     width: 100%
     height: 150px
-    border-bottom: 1px gray solid
+    border-bottom: 1px var(--dark-grayish-blue) solid
 
 .header .container-logo
     display: flex
@@ -20,7 +20,8 @@
     justify-content: space-between
     flex-grow: 9
 
-.header ul
+.header
+  ul
     display: flex
     align-items: stretch
     justify-content: space-between
@@ -28,41 +29,23 @@
     height: 100%
     padding: 0
     margin: 0
-    font: hsl(219, 9%, 45%)
-
-    li 
+    li
+      display: flex
+      align-items: center
+      background-color: transparent
+      cursor: pointer
+      padding: 0 12px
+      border-radius: 0
+      border-bottom: 5px solid transparent
+      border-top: 5px solid transparent
+      box-sizing: border-box
+      &:hover
+        border-bottom: 5px solid var(--orange)
+      a
         display: flex
         align-items: center
-        background-color: transparent
-        cursor: pointer
-        padding: 0 12px
-        border-radius: 0
-        border-bottom: 5px solid transparent
-        border-top: 5px solid transparent
-        box-sizing: border-box
-        &:hover
-            border-bottom: 5px solid hsl(26, 100%, 55%)
-
-        a
-            height: 100%
-            display: flex
-            align-items: center
-
-    button
-        background-color: transparent
-        font: inherit
-        cursor: pointer
-        border: 0
-        border-radius: 0
-        height: 100%
-        margin: 0
-        border-bottom: 5px solid transparent
-        border-top: 5px solid transparent
-        &:hover
-            border-bottom: 5px solid hsl(26, 100%, 55%)
-
-    a 
-        color: hsl(219, 9%, 45%)
+        color: var(--dark-grayish-blue)
+        
 
 .header .cart-and-avatar
     display: flex
@@ -84,4 +67,4 @@
     border: 2px solid transparent
     border-radius: 50%
     &:hover
-        border: 2px solid hsl(26, 100%, 55%)
+        border: 2px solid var(--orange)
