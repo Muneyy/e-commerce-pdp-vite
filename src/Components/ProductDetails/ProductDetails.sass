@@ -1,0 +1,95 @@
+.details-container
+    background-color: white
+    color: black
+    padding: 30px
+    display: flex
+    flex-direction: column
+    gap: 10px
+    h1, h3, p 
+        padding: 0
+        margin: 0
+
+    h3 
+        text-transform: uppercase
+        color: var(--orange)
+        font-size: 1rem
+        letter-spacing: 0.1rem
+
+    // for discount percent
+    span
+        color: var(--orange)
+        font-weight: 700
+        background-color: var(--pale-orange)
+        padding: 2px 5px
+        border-radius: 15%
+
+    #discounted-price
+        font-size: 2rem
+        font-weight: 700
+        color: black
+
+    #original-price
+        font-size: 01rem
+        font-weight: 700
+        color: var(--dark-grayish-blue)
+
+    #product-description
+        margin: 25px 0
+        color: var(--dark-grayish-blue)
+
+.details-price-container
+    display: flex
+    flex-direction: column
+
+.discounted-price-and-discount
+    display: flex
+    flex-direction: row
+    align-items: center
+    gap: 10px
+
+.details-cart-quantity
+    display: flex
+    flex-direction: row
+    align-items: stretch
+    gap: 10px
+
+.details-quantity
+    display: flex 
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    height: 50px
+    width: 150px
+    gap: 15px
+    background-color: var(--light-grayish-blue)
+    border-radius: 10px
+    
+    p
+        // font-weight: 700
+        color: black
+
+    button
+        background-color: transparent
+        color: black
+        display: flex
+        align-items: center
+        border: 0px
+        &:hover
+            border: 0px
+
+.details-add-to-cart
+    color: white
+    button
+        background-color: var(--orange)
+        display: flex
+        flex-direction: row
+        align-items: center
+        width: 250px
+        gap: 15px
+        border: 0
+        color: white
+        height: 100%
+        padding: 0 min(60px)
+        box-shadow: var(--orange) 0px 25px 20px -20px
+    p 
+        font-weight: 700

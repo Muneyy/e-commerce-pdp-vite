@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
 
 .wrapper {
   display: flex;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 3rem auto;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (max-width: 375px) {
     margin: 0 auto;
   }
 }
@@ -20,6 +20,10 @@ body {
   box-sizing: border-box;
 }
 :root {
+  /* font */
+  font-size: 16px;
+  font-family: 'Kumbh Sans', sans-serif;
+
   /* primary */
   --orange: hsl(26, 100%, 55%);
   --pale-orange: hsl(25, 100%, 94%);
