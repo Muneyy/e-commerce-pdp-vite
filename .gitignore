@@ -9,7 +9,6 @@ lerna-debug.log*
 
 node_modules
 ecommerce-product-page-main
-src/assets/images/*
 dist
 dist-ssr
 *.local
