@@ -1,5 +1,5 @@
 import './Header.sass';
-import avatarImage from './image-avatar.png';
+import avatarImage from '@/assets/images/image-avatar.png';
 import Cart from './Subcomponents/Cart';
 
 export default function Header() {

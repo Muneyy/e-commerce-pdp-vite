@@ -1,5 +1,5 @@
 /* eslint-disable react/function-component-definition */
-import thumbnailImage from './image-product-1-thumbnail.jpg';
+import thumbnailImage from '@/assets/images/image-product-1-thumbnail.jpg';
 import './CartItem.sass';
 import showTwoDecimalPlaces from '../../../HelperFunctions/showTwoDecimalPlaces';
 import { deleteCartItem } from '../../../Redux/features/cartSlice';
@@ -16,10 +16,8 @@ interface CartItemProps {
 }
 
 const CartItem: React.FC<CartItemProps> = ({
-  // company,
   id,
   title,
-  // description,
   price,
   discount,
   quantity,
