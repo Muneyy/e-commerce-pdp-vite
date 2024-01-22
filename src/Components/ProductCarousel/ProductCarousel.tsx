@@ -8,8 +8,6 @@ import LargeImage4 from '@/assets/images/image-product-4.jpg';
 
 const carouselImages = [LargeImage1, LargeImage2, LargeImage3, LargeImage4];
 
-const carouselImages = [LargeImage1, LargeImage2, LargeImage3, LargeImage4];
-
 export default function ProductCarousel() {
   const [selectedIndex, setSelectedIndex] = useState(0);
 

@@ -4,12 +4,12 @@ import ProductDetails from './Components/ProductDetails/ProductDetails';
 import ProductImages from './Components/ProductImages/ProductImages';
 import ProductCarousel from './Components/ProductCarousel/ProductCarousel';
 import '@/assets/styles/globals.scss';
-import { useMediaQuery } from './Hooks/useMedia';
+import useMediaQuery from './Hooks/useMedia';
 
 function App() {
   const [productsArray, setProductsArray] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-
+  const isMobileView = useMediaQuery(375);
   useEffect(() => {
     fetch('/api/products')
       .then((res) => res.json())
@@ -21,24 +21,30 @@ function App() {
   }, []);
 
   return (
-    <div className="wrapper">
-      <ProductCarousel />
-      <ProductImages />
+    <div>
       <Header />
+      {isMobileView && (
+      <ProductCarousel />
+      )}
       {isLoaded ? (
         productsArray.map((product) => {
           const {
             id, company, title, description, price, discount,
           } = product;
           return (
-            <ProductDetails
-              key={id}
-              company={company}
-              title={title}
-              description={description}
-              price={price}
-              discount={discount}
-            />
+            <div className="wrapper">
+              {!isMobileView && (
+              <ProductImages />
+              )}
+              <ProductDetails
+                key={id}
+                company={company}
+                title={title}
+                description={description}
+                price={price}
+                discount={discount}
+              />
+            </div>
           );
         })
       ) : (

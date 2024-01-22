@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 // https://github.com/vercel/next.js/discussions/14810#discussioncomment-61177
-export const useMediaQuery = (width: number) => {
+const useMediaQuery = (width: number) => {
   const [targetReached, setTargetReached] = useState(false);
 
   const updateTarget = useCallback((e: MediaQueryListEvent) => {
@@ -26,3 +26,5 @@ export const useMediaQuery = (width: number) => {
 
   return targetReached;
 };
+
+export default useMediaQuery;
