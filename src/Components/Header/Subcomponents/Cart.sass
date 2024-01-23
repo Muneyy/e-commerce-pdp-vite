@@ -6,6 +6,8 @@
 
 .cart-button
     position: relative
+    display: flex
+    align-items: center
 
 .cart-count
     position: absolute
@@ -16,15 +18,32 @@
     padding: 0 8px
     top: -40%
     left: 30%
-    
+
+.cart-whole
+    position: relative
+
 .cart-card 
     min-height: 250px
-    width: 350px
+    width: 370px
     color: black
     position: absolute
     background: white
-    top: 100px
-    right: -75%
+    top: 100%
+    right: -770%
+    border-radius: 20px
+    padding-bottom: 30px
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px
+    animation: fadeIn 0.1s ease-in-out
+
+.cart-card-mobile
+    min-height: 250px
+    width: 450px
+    color: black
+    position: absolute
+    background: white
+    top: 350%
+    right: -345%
+    z-index: 1
     border-radius: 20px
     padding-bottom: 30px
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px
@@ -42,4 +61,27 @@
     justify-content: center
     align-items: center
     font-weight: 700
+    padding: 0 13px
     color: var(--dark-grayish-blue)
+
+.header, .header-mobile
+    .checkout-button
+        color: white
+        background-color: var(--orange)
+        display: flex
+        font-weight: 700
+        flex-direction: row
+        align-items: center
+        justify-content: center
+        width: 100%
+        gap: 15px
+        border: 0
+        color: white
+        height: 100%
+        padding: 20px 30px
+        &:hover
+            opacity: 80%
+
+.cart-body-details
+    width: 100%
+    padding: 10px

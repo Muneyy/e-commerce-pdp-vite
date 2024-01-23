@@ -2,11 +2,13 @@ import { useEffect, useState } from 'react';
 import './Cart.sass';
 import CartItem from './CartItem';
 import { useAppSelector } from '../../../Redux/app/hooks';
+import useMediaQuery from '../../../hooks/useMedia';
 
 export default function Cart() {
   const [cartShown, isCartShown] = useState(false);
   const [cartCount, setCartCount] = useState(0);
   const currentCart = useAppSelector((state) => state.cart.value);
+  const isMobileView = useMediaQuery(375);
 
   useEffect(() => {
     setCartCount(currentCart.length);
@@ -31,7 +33,7 @@ export default function Cart() {
       </div>
       {cartShown
       && (
-      <div className="cart-card">
+      <div className={isMobileView ? 'cart-card-mobile' : 'cart-card'}>
         <div className="cart-header">
           <h2>Cart</h2>
         </div>
@@ -52,7 +54,6 @@ export default function Cart() {
                     quantity={item.quantity}
                   />
                 ))}
-                {/* <CartItem /> */}
                 <button type="submit" className="checkout-button" aria-label="checkout items from cart">
                   Checkout
                 </button>
