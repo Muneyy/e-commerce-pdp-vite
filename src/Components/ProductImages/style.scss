@@ -1,10 +1,13 @@
-.productImagesContainer
-{
-  width: 45%;
+.productImagesContainer {
+  width: 500px;
+  @media screen and (max-width: 1200px) {
+    width: 100%;
+  }
 }
 .smallImagesContainer {
   margin-top: 2rem;
   display: flex;
+  margin: 3rem auto;
   gap: 2rem;
   align-items: center;
   justify-content: center;
@@ -33,7 +36,9 @@
   }
 
   &.largeImage {
-    width: 500px;
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
   }
 }
 
