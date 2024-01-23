@@ -1,0 +1,42 @@
+.hamburgerButton,
+.closeBtn {
+  background-color: transparent;
+  border: 0;
+  display: flex;
+  align-items: center;
+}
+.sideMenuWrapper,
+.sideMenuContainer {
+  height: 100% !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 100;
+
+  &.sideMenuWrapper {
+    background-color: var(--black);
+    width: 100%;
+  }
+  &.sideMenuContainer {
+    background-color: var(--white);
+    width: 70%;
+    padding: 25px;
+  }
+  &.menuOpen,
+  .sideMenuContainer {
+    transform: translateX(0);
+  }
+}
+.sidebarItems {
+  color: var(--dark-grayish-blue);
+  margin-top: 30px;
+  list-style: none outside;
+  padding-inline-start: 0;
+  display: block !important;
+  .sidebarItem {
+    margin-top: 20px;
+    font-weight: 700;
+  }
+}

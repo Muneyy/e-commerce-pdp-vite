@@ -3,7 +3,7 @@
 .wrapper {
   display: flex;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 3rem auto;
 
   @media screen and (max-width: 375px) {
     margin: 0 auto;
@@ -13,6 +13,8 @@
 body {
   padding: 0 !important;
   margin: 0 !important;
+  font-family: "Kumbh Sans", sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 * {
