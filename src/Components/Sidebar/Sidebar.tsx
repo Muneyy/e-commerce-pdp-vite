@@ -1,4 +1,4 @@
-import React, { BaseSyntheticEvent, useState } from 'react';
+import { BaseSyntheticEvent, useState } from 'react';
 import './style.scss';
 
 export default function Sidebar() {
