@@ -3,9 +3,9 @@
     align-items: stretch
     justify-content: space-between
     background-color: var(--white)
-    margin: 0 50px
+    margin: 0 auto
     gap: 20px
-    max-width: 100%
+    max-width: 1200px
     height: 150px
     border-bottom: 1px var(--grayish-blue) solid
 
@@ -69,13 +69,17 @@
     gap: 30px
     justify-content: space-between
     position: relative
+    padding-right: 15px
+    @media screen and (max-width: 1200px)
+      gap: 15px
 
   button
     background-color: transparent
     border: 0
     padding: 0
 
-.header #avatar
+.header 
+  #avatar
     width: 50px
     height: 50px
     border: 2px solid transparent
@@ -85,8 +89,8 @@
 
 .header-mobile
   #avatar
-    width: 40px
-    height: 40px
+    width: 30px
+    height: 30px
 
 .container-logo-cart-mobile
   display: flex
@@ -96,7 +100,7 @@
   width: 100%
   gap: 20px
   
-  @media screen and (max-width: 785px) 
+  @media screen and (max-width: 1200px)
     padding-left: 15px
   
 .container-logo

@@ -1,4 +1,6 @@
-import { BaseSyntheticEvent, useState } from 'react';
+import {
+  BaseSyntheticEvent, useCallback, useEffect, useState,
+} from 'react';
 import './style.scss';
 import LargeImage1 from '@/assets/images/image-product-1.jpg';
 import LargeImage2 from '@/assets/images/image-product-2.jpg';
@@ -17,11 +19,39 @@ export default function ProductImages() {
 
   const handleImageClick = (index: number) => setSelectedIndex(index);
 
-  const handlePrev = () => setSelectedIndex((prevVal:number) => (prevVal === 0 ? LargeImages.length - 1 : prevVal - 1));
+  const handlePrev = useCallback(() => {
+    setSelectedIndex((prevVal: number) => (prevVal === 0 ? LargeImages.length - 1 : prevVal - 1));
+  }, [setSelectedIndex]);
 
-  const handleNext = () => setSelectedIndex((prevVal) => (prevVal + 1) % LargeImages.length);
+  const handleNext = useCallback(() => {
+    setSelectedIndex((prevVal) => (prevVal + 1) % LargeImages.length);
+  }, [setSelectedIndex]);
 
-  const toggleLightBox = () => setShowLightBox((prevShowLightBox) => !prevShowLightBox);
+  const toggleLightBox = (event: React.KeyboardEvent | React.MouseEvent) => {
+    const isEscapeKey = event?.type === 'keydown' && (event as React.KeyboardEvent).key === 'Escape';
+    const isClick = event?.type === 'click';
+
+    if ((isEscapeKey && showLightBox) || isClick) {
+      setShowLightBox((prevShowLightBox) => !prevShowLightBox);
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowRight') {
+        handleNext();
+      }
+      if (event.key === 'ArrowLeft') {
+        handlePrev();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [handlePrev, handleNext]);
 
   const renderSmallImages = (
     <div className="smallImagesContainer">
@@ -34,7 +64,8 @@ export default function ProductImages() {
           onKeyDown={() => handleImageClick(index)}
         >
           <img
-            className={`smallImages ${selectedIndex === index ? ' selected' : ''}`}
+            className={`smallImages ${selectedIndex === index ? ' selected' : ''
+            }`}
             src={image}
             alt={`Small Img ${index + 1}`}
           />
@@ -51,7 +82,11 @@ export default function ProductImages() {
         role="button"
         tabIndex={0}
       >
-        <img src={LargeImages[selectedIndex]} alt={`Large Img ${selectedIndex + 1}`} className="largeImage" />
+        <img
+          src={LargeImages[selectedIndex]}
+          alt={`Large Img ${selectedIndex + 1}`}
+          className="largeImage"
+        />
       </div>
       {renderSmallImages}
     </>
@@ -72,8 +107,12 @@ export default function ProductImages() {
         role="button"
         tabIndex={0}
       >
-        <div>
-          <img src={LargeImages[selectedIndex]} alt="Large Img" className="largeImageLightbox" />
+        <div className="imagesContainer">
+          <img
+            src={LargeImages[selectedIndex]}
+            alt="Large Img"
+            className="largeImageLightbox"
+          />
           {renderSmallImages}
           <button
             className="closeIcon"
@@ -82,7 +121,11 @@ export default function ProductImages() {
             aria-label="Close"
           >
             <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg">
-              <path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fillRule="evenodd" />
+              <path
+                d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+                fill="#69707D"
+                fillRule="evenodd"
+              />
             </svg>
           </button>
           <button
@@ -91,7 +134,15 @@ export default function ProductImages() {
             type="button"
             aria-label="Next"
           >
-            <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" strokeWidth="3" fill="none" fillRule="evenodd" /></svg>
+            <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m2 1 8 8-8 8"
+                stroke="#1D2026"
+                strokeWidth="3"
+                fill="none"
+                fillRule="evenodd"
+              />
+            </svg>
           </button>
           <button
             className="prevIcon"
@@ -99,7 +150,15 @@ export default function ProductImages() {
             type="button"
             aria-label="Prev"
           >
-            <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" strokeWidth="3" fill="none" fillRule="evenodd" /></svg>
+            <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11 1 3 9l8 8"
+                stroke="#1D2026"
+                strokeWidth="3"
+                fill="none"
+                fillRule="evenodd"
+              />
+            </svg>
           </button>
         </div>
       </div>
