@@ -5,7 +5,7 @@ import Sidebar from '@/Components/Sidebar/Sidebar.tsx';
 import useMediaQuery from '@/hooks/useMedia';
 
 export default function Header() {
-  const isMobileView = useMediaQuery(375);
+  const isMobileView = useMediaQuery(780);
   return (
     <div className={isMobileView ? 'header-mobile' : 'header'}>
       {isMobileView && (<Sidebar />)}

@@ -8,7 +8,7 @@ export default function Cart() {
   const [cartShown, isCartShown] = useState(false);
   const [cartCount, setCartCount] = useState(0);
   const currentCart = useAppSelector((state) => state.cart.value);
-  const isMobileView = useMediaQuery(375);
+  const isMobileView = useMediaQuery(785);
 
   useEffect(() => {
     setCartCount(currentCart.length);
