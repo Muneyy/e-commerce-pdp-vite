@@ -9,55 +9,45 @@
     height: 150px
     border-bottom: 1px var(--dark-grayish-blue) solid
 
-.header-mobile
-    display: flex
-    justify-content: space-between
-    align-items: center
-    background-color: var(--white)
-    padding: 15px 10px
-    margin: 0
-
-.header 
-  .container-logo
+.header .container-logo
     display: flex
     align-items: center
     flex-grow: 1
 
-.header 
-  .container-navlinks-cart
+.header .container-navlinks-cart
     display: flex
     flex-direction: row
     justify-content: space-between
     flex-grow: 9
 
-.header
-  ul
-    display: flex
-    align-items: stretch
-    justify-content: space-between
-    list-style-type: none
-    height: 100%
-    padding: 0
-    margin: 0
-    li
-      display: flex
-      align-items: center
-      background-color: transparent
-      cursor: pointer
-      padding: 0 12px
-      border-radius: 0
-      border-bottom: 5px solid transparent
-      border-top: 5px solid transparent
-      box-sizing: border-box
-      &:hover
-        border-bottom: 5px solid var(--orange)
-      a
-        display: flex
-        align-items: center
-        color: var(--dark-grayish-blue)
-        
+.nav-links
+  display: flex
+  align-items: stretch
+  justify-content: space-between
+  list-style-type: none
+  height: 100%
+  padding: 0
+  margin: 0
 
-.header, .cart-and-avatar
+.nav-links-item
+  display: flex
+  align-items: center
+  background-color: transparent
+  cursor: pointer
+  padding: 0 12px
+  border-radius: 0
+  border-bottom: 5px solid transparent
+  border-top: 5px solid transparent
+  box-sizing: border-box
+  &:hover
+    border-bottom: 5px solid var(--orange)
+  .nav-links-link
+    display: flex
+    height: 100%
+    align-items: center
+    color: var(--dark-grayish-blue)
+
+.header .cart-and-avatar
     display: flex
     flex-direction: row
     align-items: center
@@ -71,7 +61,7 @@
         border: 0
         padding: 0
 
-#avatar
+.header #avatar
     width: 50px
     height: 50px
     border: 2px solid transparent

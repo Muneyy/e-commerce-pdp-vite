@@ -19,28 +19,28 @@ export default function Header() {
         && (
         <nav>
           <ul className="nav-links">
-            <li>
-              <a href="/">
+            <li className="nav-links-item">
+              <a href="/" className="nav-links-link">
                 Collections
               </a>
             </li>
-            <li>
-              <a href="/">
+            <li className="nav-links-item">
+              <a href="/" className="nav-links-link">
                 Men
               </a>
             </li>
-            <li>
-              <a href="/">
+            <li className="nav-links-item">
+              <a href="/" className="nav-links-link">
                 Women
               </a>
             </li>
-            <li>
-              <a href="/">
+            <li className="nav-links-item">
+              <a href="/" className="nav-links-link">
                 About
               </a>
             </li>
-            <li>
-              <a href="/">
+            <li className="nav-links-item">
+              <a href="/" className="nav-links-link">
                 Contact
               </a>
             </li>
