@@ -1,4 +1,4 @@
-import React, { BaseSyntheticEvent, useState } from 'react';
+import { BaseSyntheticEvent, useState } from 'react';
 import './style.scss';
 import LargeImage1 from '@/assets/images/image-product-1.jpg';
 import LargeImage2 from '@/assets/images/image-product-2.jpg';

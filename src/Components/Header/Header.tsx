@@ -1,8 +1,8 @@
 import './Header.sass';
 import avatarImage from '@/assets/images/image-avatar.png';
 import Cart from './Subcomponents/Cart';
-import Sidebar from '@/Components/Sidebar/Sidebar.tsx';
-import useMediaQuery from '@/hooks/useMedia';
+import Sidebar from '../Sidebar/Sidebar';
+import useMediaQuery from '../../hooks/useMedia';
 
 export default function Header() {
   const isMobileView = useMediaQuery(780);

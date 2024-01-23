@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './style.scss';
 
 import LargeImage1 from '@/assets/images/image-product-1.jpg';
