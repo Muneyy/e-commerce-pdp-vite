@@ -5,7 +5,7 @@
     background-color: var(--white)
     margin: 0 50px
     gap: 20px
-    width: 100%
+    max-width: 100%
     height: 150px
     border-bottom: 1px var(--dark-grayish-blue) solid
 
@@ -24,7 +24,6 @@
     display: flex
     align-items: center
     justify-content: center
-    flex-grow: 1
 
 .header .container-navlinks-cart
     display: flex
@@ -86,7 +85,7 @@
 .header-mobile
   #avatar
     width: 40px
-    heigght: 40px
+    height: 40px
 
 .container-logo-cart-mobile
   display: flex
@@ -95,7 +94,11 @@
   justify-content: space-between
   width: 100%
   gap: 20px
-  padding-left: 15px
+  
+  @media screen and (max-width: 375px) 
+    padding-left: 15px
+  
+  
 
 .container-logo
   top: 10px
