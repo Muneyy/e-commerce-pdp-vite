@@ -2,8 +2,10 @@
 
 .wrapper {
   display: flex;
-  max-width: 1200px;
+  gap: 5rem;
+  max-width: 1100px;
   margin: 3rem auto;
+  align-items: center;
 
   @media screen and (max-width: 375px) {
     margin: 0 auto;
@@ -11,9 +13,9 @@
 }
 
 body {
+  display: block !important;
   padding: 0 !important;
   margin: 0 !important;
-  font-family: "Kumbh Sans", sans-serif;
   font-family: "Kumbh Sans", sans-serif;
 }
 
