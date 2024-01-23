@@ -2,7 +2,7 @@ import './Header.sass';
 import avatarImage from '@/assets/images/image-avatar.png';
 import Cart from './Subcomponents/Cart';
 import Sidebar from '@/Components/Sidebar/Sidebar.tsx';
-import useMediaQuery from '@/hooks/useMedia';
+import useMediaQuery from '@/Hooks/useMedia';
 
 export default function Header() {
   const isMobileView = useMediaQuery(375);
@@ -17,28 +17,28 @@ export default function Header() {
       <div className="container-navlinks-cart">
         <nav>
           <ul className="nav-links">
-            <li>
-              <a href="/">
+            <li className="nav-links-item">
+              <a href="/" className="nav-links-link">
                 Collections
               </a>
             </li>
-            <li>
-              <a href="/">
+            <li className="nav-links-item">
+              <a href="/" className="nav-links-link">
                 Men
               </a>
             </li>
-            <li>
-              <a href="/">
+            <li className="nav-links-item">
+              <a href="/" className="nav-links-link">
                 Women
               </a>
             </li>
-            <li>
-              <a href="/">
+            <li className="nav-links-item">
+              <a href="/" className="nav-links-link">
                 About
               </a>
             </li>
-            <li>
-              <a href="/">
+            <li className="nav-links-item">
+              <a href="/" className="nav-links-link">
                 Contact
               </a>
             </li>
