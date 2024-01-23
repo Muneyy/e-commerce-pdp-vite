@@ -5,9 +5,20 @@
     display: flex
     flex-direction: column
     gap: 10px
+    @media screen and (max-width: 375px)
+        gap: 5px
+
     h1, h3, p 
         padding: 0
         margin: 0
+
+    #product-title
+        font-size: 2rem
+        font-weight: 800
+
+    #product-company
+        color: var(--orange)
+        font-weight: 700
 
     h3 
         text-transform: uppercase
@@ -32,16 +43,21 @@
         font-size: 01rem
         font-weight: 700
         text-decoration: line-through
-        color: var(--dark-grayish-blue)
+        color: var(--grayish-blue)
 
     #product-description
         margin: 25px 0
         color: var(--dark-grayish-blue)
+        font-size: 1.3rem
+        font-weight: 500
 
 .details-price-container
     display: flex
     flex-direction: column
-
+    @media screen and (max-width: 375px)
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
 .discounted-price-and-discount
     display: flex
     flex-direction: row
@@ -53,6 +69,10 @@
     flex-direction: row
     align-items: stretch
     gap: 10px
+    @media screen and (max-width: 375px)
+        flex-direction: column
+        align-items: stretch
+        gap: 10px
 
 .details-quantity
     display: flex 
@@ -64,6 +84,9 @@
     gap: 15px
     background-color: var(--light-grayish-blue)
     border-radius: 10px
+    @media screen and (max-width: 375px)
+        width: 100%
+
     p
         font-weight: 700
         color: black
@@ -84,12 +107,18 @@
         flex-direction: row
         align-items: center
         width: 250px
+        height: 100%
         gap: 15px
         border: 0
         color: white
-        height: 100%
+        flex-grow: 1
         padding: 0 min(60px)
         box-shadow: var(--orange) 0px 25px 20px -20px
+        @media screen and (max-width: 375px)
+            height: 50px
+            width: 100%
+            display: flex
+            justify-content: center
         &:hover
             opacity: 80%
     p 

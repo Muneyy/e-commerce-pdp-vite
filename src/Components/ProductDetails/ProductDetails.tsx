@@ -50,8 +50,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 
   return (
     <div className="details-container">
-      <h3>{company}</h3>
-      <h1>{title}</h1>
+      <h3 id="product-company">{company}</h3>
+      <h1 id="product-title">{title}</h1>
       <p id="product-description">{description}</p>
       <div className="details-price-container">
         <div className="discounted-price-and-discount">
