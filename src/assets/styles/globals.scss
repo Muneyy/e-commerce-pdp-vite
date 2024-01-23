@@ -7,6 +7,13 @@
   margin: 3rem auto;
   align-items: center;
 
+  @media screen and (max-width: 1200px) and (min-width: 376px) {
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem auto;
+    padding: 0 2rem;
+  }
+
   @media screen and (max-width: 375px) {
     margin: 0 auto;
   }
