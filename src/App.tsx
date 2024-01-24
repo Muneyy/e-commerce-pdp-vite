@@ -38,6 +38,7 @@ function App() {
               )}
               <ProductDetails
                 key={id}
+                id={id}
                 company={company}
                 title={title}
                 description={description}

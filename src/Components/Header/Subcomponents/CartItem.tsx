@@ -6,7 +6,7 @@ import { deleteCartItem } from '../../../Redux/features/cartSlice';
 import { useAppDispatch } from '../../../Redux/app/hooks';
 
 interface CartItemProps {
-  id: string;
+  id: number;
   company: string;
   title: string;
   description: string;

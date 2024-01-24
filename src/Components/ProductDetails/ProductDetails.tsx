@@ -1,12 +1,12 @@
 /* eslint-disable react/function-component-definition */
 import React, { useState } from 'react';
 import './ProductDetails.sass';
-import { v4 as uuidv4 } from 'uuid';
 import { useAppDispatch } from '../../Redux/app/hooks';
 import { addToCart } from '../../Redux/features/cartSlice';
 import showTwoDecimalPlaces from '../../HelperFunctions/showTwoDecimalPlaces';
 
 interface ProductDetailsProps {
+  id: number;
   company: string;
   title: string;
   description: string;
@@ -15,6 +15,7 @@ interface ProductDetailsProps {
 }
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({
+  id,
   company,
   title,
   description,
@@ -36,7 +37,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
       return;
     }
     dispatch(addToCart({
-      id: uuidv4(),
+      id,
       company,
       title,
       description,
