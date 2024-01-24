@@ -33,7 +33,7 @@ const CartItem: React.FC<CartItemProps> = ({
       <img src={thumbnailImage} alt="Cart item" />
       <div className="cart-item-details-and-delete">
         <div className="cart-item-details">
-          <p>{title}</p>
+          <p id="cart-item-description">{title}</p>
           <p>
             $
             {showTwoDecimalPlaces(price * discount)}
