@@ -21,23 +21,25 @@
 
 .cart-whole
     position: relative
+    @media screen and (max-width: 450px)
+        position: static
 
 .cart-card 
     min-height: 250px
-    width: 350px
+    width: 370px
     color: black
     position: absolute
     background: white
-    top: 85px
+    top: 45px
     right: -100px
     border-radius: 20px
-    padding-bottom: 30px
+    padding-bottom: 20px
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px
     animation: fadeIn 0.1s ease-in-out
 
 .cart-card-mobile
     min-height: 250px
-    width: 345px
+    width: 370px
     color: black
     position: absolute
     background: white
@@ -45,14 +47,16 @@
     right: -240%
     z-index: 1
     border-radius: 20px
-    padding-bottom: 30px
+    padding-bottom: 20px
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px
     animation: fadeIn 0.1s ease-in-out
-    @media screen and (max-width: 420px)
+    @media screen and (max-width: 450px)
+        position: absolute
+        overflow: auto
+        min-height: 250px
         width: 90vw
-        // position: fixed
-        z-index: 2
-        // left: 50%
+        top: 80px
+        right: 5px
 
 .cart-header 
     border-bottom: 1px var(--grayish-blue) solid
@@ -90,3 +94,6 @@
 .cart-body-details
     width: 100%
     padding: 10px
+    display: flex
+    flex-direction: column
+    gap: 10px
