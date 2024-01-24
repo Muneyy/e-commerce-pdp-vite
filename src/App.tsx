@@ -9,7 +9,7 @@ import useMediaQuery from './hooks/useMedia';
 function App() {
   const [productsArray, setProductsArray] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
-  const isMobileView = useMediaQuery(375);
+  const isMobileView = useMediaQuery(780);
   useEffect(() => {
     // fetch products from mirageJS API
     fetch('/api/products')
@@ -32,7 +32,7 @@ function App() {
             id, company, title, description, price, discount,
           } = product;
           return (
-            <div className="wrapper">
+            <div className="wrapper" key={id}>
               {!isMobileView && (
               <ProductImages />
               )}
