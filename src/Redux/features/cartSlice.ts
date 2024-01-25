@@ -23,17 +23,11 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action: PayloadAction<ProductType>) => {
-      if (state.value.find((item) => item.id === action.payload.id)) {
+      // Only change quantity if product already in cart
+      const index = state.value.findIndex((item) => item.id === action.payload.id);
+      if (index !== -1) {
         // eslint-disable-next-line no-param-reassign
-        state.value = state.value.map((item) => {
-          if (item.id === action.payload.id) {
-            return {
-              ...item,
-              quantity: item.quantity + action.payload.quantity,
-            };
-          }
-          return item;
-        });
+        state.value[index].quantity += action.payload.quantity;
       } else {
         state.value.push(action.payload);
       }
